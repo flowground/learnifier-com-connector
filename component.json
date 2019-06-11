@@ -1,0 +1,611 @@
+{
+    "title": "Learnifier",
+    "docsUrl": "http://learnifier.com/api/",
+    "url": "https://api.apis.guru/v2/specs/learnifier.com/1.1.0/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "http://learnifier.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "get_coursedesigns": {
+            "main": "./lib/actions/get_coursedesigns.js",
+            "title": "Lists all global course design templates",
+            "description": "Lists all global course design templates. Only api callers that have full access can call this method.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_coursedesigns.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_extorgunit": {
+            "main": "./lib/actions/get_extorgunit.js",
+            "title": "Get Organization Unit with External Id",
+            "description": "Returns information about the organization unit with the specified external id.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_extorgunit.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_extparticipation": {
+            "main": "./lib/actions/get_extparticipation.js",
+            "title": "Gets a participation by external id",
+            "description": "Gets a participation by external id.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_extparticipation.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_extproject": {
+            "main": "./lib/actions/get_extproject.js",
+            "title": "Gets Organization Unit by external id",
+            "description": "Gets an Organization Unit by external id",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_extproject.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_extuser": {
+            "main": "./lib/actions/get_extuser.js",
+            "title": "Gets a user by external id",
+            "description": "Gets a user by external id.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_extuser.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_globalusergroups": {
+            "main": "./lib/actions/get_globalusergroups.js",
+            "title": "List Global User Groups.",
+            "description": "Returns a list of Global User Groups. Global User Groups are set up for the realm, and will generate groups that can be used on the client level.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_globalusergroups.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_globalusergroups__groupid__members": {
+            "main": "./lib/actions/get_globalusergroups__groupid__members.js",
+            "title": "List of all users in group.",
+            "description": "Returns a list of all members in User Groups that are based on the Global Group with this groupid.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_globalusergroups__groupid__members.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_orgunits": {
+            "main": "./lib/actions/get_orgunits.js",
+            "title": "Organization Units",
+            "description": "The orgunits endpoint returns information about the available organization units (orgunits).\nThe response includes the display name, internal and external id and client number.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_orgunits.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_orgunits": {
+            "main": "./lib/actions/post_orgunits.js",
+            "title": "Adds an Organization Unit",
+            "description": "Adds an Organization Unit",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_orgunits.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_orgunits__orgid_": {
+            "main": "./lib/actions/get_orgunits__orgid_.js",
+            "title": "Get Organization Unit",
+            "description": "Returns information about the specified organization unit.\nThe response includes the display name, internal and external id and client number.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_orgunits__orgid_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "patch_orgunits__orgid_": {
+            "main": "./lib/actions/patch_orgunits__orgid_.js",
+            "title": "Updates an Organization Unit",
+            "description": "Adds an Organization Unit",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/patch_orgunits__orgid_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_orgunits__orgid__projects": {
+            "main": "./lib/actions/get_orgunits__orgid__projects.js",
+            "title": "Organization Unit Projects",
+            "description": "Returns the available projects for the organization unit\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_orgunits__orgid__projects.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_orgunits__orgid__projects": {
+            "main": "./lib/actions/post_orgunits__orgid__projects.js",
+            "title": "Create project",
+            "description": "Creates a new project\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_orgunits__orgid__projects.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_orgunits__orgid__projects__projectid_": {
+            "main": "./lib/actions/delete_orgunits__orgid__projects__projectid_.js",
+            "title": "Deletes the project",
+            "description": "Deletes the project. The project can only be deleted if the project do not contain any participants.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_orgunits__orgid__projects__projectid_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_orgunits__orgid__projects__projectid_": {
+            "main": "./lib/actions/get_orgunits__orgid__projects__projectid_.js",
+            "title": "Project information",
+            "description": "Returns project information\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_orgunits__orgid__projects__projectid_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "patch_orgunits__orgid__projects__projectid_": {
+            "main": "./lib/actions/patch_orgunits__orgid__projects__projectid_.js",
+            "title": "Update project information",
+            "description": "Updates information about a project. Values are only updated if the fields are specified in the input\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/patch_orgunits__orgid__projects__projectid_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_orgunits__orgid__projects__projectid__participants": {
+            "main": "./lib/actions/get_orgunits__orgid__projects__projectid__participants.js",
+            "title": "Project participants",
+            "description": "Returns project participants\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_orgunits__orgid__projects__projectid__participants.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_orgunits__orgid__projects__projectid__participants": {
+            "main": "./lib/actions/post_orgunits__orgid__projects__projectid__participants.js",
+            "title": "Add participant",
+            "description": "Add a user to the project. Participant information is created for the user. In the body object, only one of either email or userid must be specified. The participant needs to be activated before it the user can access it.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_orgunits__orgid__projects__projectid__participants.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_orgunits__orgid__projects__projectid__participants___participantId_": {
+            "main": "./lib/actions/delete_orgunits__orgid__projects__projectid__participants___participantId_.js",
+            "title": "Deletes a participant",
+            "description": "Deletes a participant. The user itself will still remain but any state related to the project will be deleted.\nIt might not be possible due to constraints from the products in the project to delete the participant. However\nthis can only be determined at the time of the delete. If a delete fails the participant will have their inError\nflag set.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_orgunits__orgid__projects__projectid__participants___participantId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_orgunits__orgid__projects__projectid__participants___participantId__activate": {
+            "main": "./lib/actions/post_orgunits__orgid__projects__projectid__participants___participantId__activate.js",
+            "title": "Activate participant",
+            "description": "Activates a participant so that it can be used\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_orgunits__orgid__projects__projectid__participants___participantId__activate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_orgunits__orgid__projects__projectid__participants___participantId__loginlink": {
+            "main": "./lib/actions/post_orgunits__orgid__projects__projectid__participants___participantId__loginlink.js",
+            "title": "Participant login link",
+            "description": "Returns a single sign on link for the participant. The link is only usable once and should be used directly. The link expires after a few minutes.\n\nThis operation requires the *login link* permission.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_orgunits__orgid__projects__projectid__participants___participantId__loginlink.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_orgunits__orgid__projects__projectid__teammembers": {
+            "main": "./lib/actions/get_orgunits__orgid__projects__projectid__teammembers.js",
+            "title": "Project team members",
+            "description": "Returns the project team members. A team member is a ....\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_orgunits__orgid__projects__projectid__teammembers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_orgunits__orgid__usergroups": {
+            "main": "./lib/actions/get_orgunits__orgid__usergroups.js",
+            "title": "List User Groups.",
+            "description": "Returns a list of User Groups for the org unit.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_orgunits__orgid__usergroups.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_orgunits__orgid__usergroups": {
+            "main": "./lib/actions/post_orgunits__orgid__usergroups.js",
+            "title": "Create a User Group.",
+            "description": "Create a User Group.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_orgunits__orgid__usergroups.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_orgunits__orgid__usergroups__groupid_": {
+            "main": "./lib/actions/get_orgunits__orgid__usergroups__groupid_.js",
+            "title": "Get user group",
+            "description": "Returns single User Group.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_orgunits__orgid__usergroups__groupid_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_orgunits__orgid__usergroups__groupid__members": {
+            "main": "./lib/actions/get_orgunits__orgid__usergroups__groupid__members.js",
+            "title": "List of all users in group.",
+            "description": "Returns a list of all members in User Groups that are based on the Global Group with this groupid.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_orgunits__orgid__usergroups__groupid__members.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_orgunits__orgid__usergroups__groupid__members": {
+            "main": "./lib/actions/post_orgunits__orgid__usergroups__groupid__members.js",
+            "title": "Add user group member.",
+            "description": "Adds a user to user group.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_orgunits__orgid__usergroups__groupid__members.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_orgunits__orgid__usergroups__groupid__members__uuid_": {
+            "main": "./lib/actions/delete_orgunits__orgid__usergroups__groupid__members__uuid_.js",
+            "title": "Remove user group member.",
+            "description": "Removes a user from a user group.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_orgunits__orgid__usergroups__groupid__members__uuid_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_users": {
+            "main": "./lib/actions/get_users.js",
+            "title": "Lists all users",
+            "description": "Lists all users. Only api callers that have full access can call this method.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_users.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_users": {
+            "main": "./lib/actions/post_users.js",
+            "title": "Adds a user",
+            "description": "Adds a user. No two users can have the same email address. Email is saved WITH case but compared regardless of case. Email can be changed for a user assuming it doesn't cause a conflict.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_users.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_users__userid_": {
+            "main": "./lib/actions/get_users__userid_.js",
+            "title": "User information",
+            "description": "Returns information about a user\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_users__userid_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "patch_users__userid_": {
+            "main": "./lib/actions/patch_users__userid_.js",
+            "title": "Updates user information",
+            "description": "Updates a user. All values that have a key defined in the input will be set. So if a value should not be updated omit it totally from the input, otherwise it will be unset.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/patch_users__userid_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_users__userid__pic_key__APIKEY_": {
+            "main": "./lib/actions/get_users__userid__pic_key__APIKEY_.js",
+            "title": "User profile picture",
+            "description": "Returns a thumbnail picture of the user. This can either be a selected picture or an auto generated image. This method doesn't require a full sign in. The api key is sufficient.\nThe image is square and is likely, but not necessary, to be in 128x128 PNG format. However the format will always be either PNG, JPEG or GIF.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_users__userid__pic_key__APIKEY_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_users__userid__projectParticipations": {
+            "main": "./lib/actions/get_users__userid__projectParticipations.js",
+            "title": "Returns information about the projects the user is a participant in.",
+            "description": "Returns information about the projects the user is a participant in. Only the projects that the current token have access to will be listed.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_users__userid__projectParticipations.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

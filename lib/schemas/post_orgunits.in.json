@@ -1,0 +1,45 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "caller": {
+                    "description": "The id of the user that initiated this operation",
+                    "example": "81590981-1e05-4fd5-aa15-15bc4b06cf7f",
+                    "format": "uuid",
+                    "type": "string"
+                },
+                "clientNumber": {
+                    "description": "A client number. Sometimes used when communicating with external system. Must be unique if specified.",
+                    "example": "X-1234",
+                    "type": "string"
+                },
+                "country": {
+                    "description": "The country code that best matches the organization unit. If unspecified the platform default will be set.",
+                    "example": "se",
+                    "format": "locale",
+                    "type": "string"
+                },
+                "displayName": {
+                    "description": "The name shown for the organization unit",
+                    "example": "Sample Corp",
+                    "type": "string"
+                },
+                "externalId": {
+                    "description": "The external id (foreign key). Must not exceed 255 characters.",
+                    "type": "string"
+                },
+                "parent": {
+                    "description": "A Organization Unit id of the parent Organization Unit (optional).",
+                    "example": "1234",
+                    "format": "id64",
+                    "type": "number"
+                }
+            },
+            "required": [
+                "displayName"
+            ],
+            "type": "object"
+        }
+    }
+}

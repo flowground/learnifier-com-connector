@@ -1,0 +1,10 @@
+{
+    "type": "object",
+    "properties": {
+        "orgid": {
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+        }
+    }
+}

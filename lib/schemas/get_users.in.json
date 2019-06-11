@@ -1,0 +1,17 @@
+{
+    "type": "object",
+    "properties": {
+        "limit": {
+            "required": false,
+            "type": "integer",
+            "format": "integer",
+            "default": 5000
+        },
+        "offset": {
+            "required": false,
+            "type": "integer",
+            "format": "integer",
+            "default": 0
+        }
+    }
+}

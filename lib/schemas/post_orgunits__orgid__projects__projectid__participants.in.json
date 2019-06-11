@@ -1,0 +1,33 @@
+{
+    "type": "object",
+    "properties": {
+        "orgid": {
+            "required": true,
+            "type": "integer"
+        },
+        "projectid": {
+            "required": true,
+            "type": "integer"
+        },
+        "requestBody": {
+            "properties": {
+                "email": {
+                    "description": "The email of the user. If no user exists with the specified email a user will be created with default values and the specified email.",
+                    "example": "user@example.com",
+                    "format": "email",
+                    "type": "string"
+                },
+                "extid": {
+                    "description": "An optional external id for the participation",
+                    "type": "string"
+                },
+                "userid": {
+                    "example": "81590981-1e05-4fd5-aa15-15bc4b06cf7f",
+                    "format": "uuid",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

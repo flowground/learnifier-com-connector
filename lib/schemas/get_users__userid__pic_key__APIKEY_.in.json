@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "userid": {
+            "required": true,
+            "type": "string"
+        },
+        "APIKEY": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

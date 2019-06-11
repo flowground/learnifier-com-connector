@@ -1,0 +1,55 @@
+{
+    "type": "object",
+    "properties": {
+        "userid": {
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+        },
+        "requestBody": {
+            "properties": {
+                "displayName": {
+                    "description": "The name shown when the user is listed",
+                    "example": "Jane Doe",
+                    "type": "string"
+                },
+                "externalId": {
+                    "description": "The external id (foreign key). Must not exceed 255 characters.",
+                    "type": "string"
+                },
+                "firstName": {
+                    "description": "The first (given) name of the user",
+                    "example": "Jane",
+                    "type": "string"
+                },
+                "hardLock": {
+                    "description": "True if the user should be locked from the system",
+                    "type": "boolean"
+                },
+                "homeOrg": {
+                    "description": "The primary organization for the user. Must match the id of an Organization Unit.",
+                    "example": 1234,
+                    "format": "int64",
+                    "type": "integer"
+                },
+                "lastName": {
+                    "description": "The last name (surname) of the user",
+                    "example": "Doe",
+                    "format": "string"
+                },
+                "locale": {
+                    "description": "The user's preferred language/locale setting. Affects date and number formatting.",
+                    "example": "en-US",
+                    "format": "locale",
+                    "type": "string"
+                },
+                "primaryEmail": {
+                    "description": "The primary email for the user. Used for communication from the platform.",
+                    "example": "jane.doe@example.com",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

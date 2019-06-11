@@ -1,0 +1,29 @@
+{
+    "type": "object",
+    "properties": {
+        "orgid": {
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+        },
+        "requestBody": {
+            "properties": {
+                "name": {
+                    "description": "Name of group.",
+                    "example": "Foo",
+                    "type": "string"
+                },
+                "parent": {
+                    "description": "Optional ID of parent group.",
+                    "example": 1010,
+                    "format": "int64",
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        }
+    }
+}

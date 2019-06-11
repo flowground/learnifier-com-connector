@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "orgid": {
+            "required": true,
+            "type": "integer"
+        },
+        "projectid": {
+            "required": true,
+            "type": "integer"
+        }
+    }
+}

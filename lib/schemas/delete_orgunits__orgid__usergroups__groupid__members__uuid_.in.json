@@ -1,0 +1,20 @@
+{
+    "type": "object",
+    "properties": {
+        "orgid": {
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+        },
+        "groupid": {
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+        },
+        "uuid": {
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+        }
+    }
+}

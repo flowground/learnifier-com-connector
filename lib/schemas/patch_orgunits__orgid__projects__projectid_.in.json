@@ -1,0 +1,62 @@
+{
+    "type": "object",
+    "properties": {
+        "orgid": {
+            "required": true,
+            "type": "integer"
+        },
+        "projectid": {
+            "required": true,
+            "type": "integer"
+        },
+        "requestBody": {
+            "properties": {
+                "country": {
+                    "description": "The country code",
+                    "example": "SE",
+                    "format": "countrycode",
+                    "type": "string"
+                },
+                "locale": {
+                    "description": "The primary locale for this project",
+                    "example": "en-US",
+                    "format": "locale",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The internal name of the project",
+                    "type": "string"
+                },
+                "note": {
+                    "description": "The internal note field",
+                    "type": "string"
+                },
+                "status": {
+                    "description": "Project status. Can be either ACTIVATED, NEW or DISABLED",
+                    "enum": [
+                        "ACTIVATED",
+                        "NEW",
+                        "DISABLED"
+                    ],
+                    "example": "ACTIVATED",
+                    "type": "string"
+                },
+                "timezone": {
+                    "description": "The main timezone for the project",
+                    "example": "Europe/Stockholm",
+                    "format": "timezone",
+                    "type": "string"
+                },
+                "userDescription": {
+                    "description": "The description presented to participants. This value can be *null*.",
+                    "type": "string"
+                },
+                "userTitle": {
+                    "description": "The title presented to participants",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

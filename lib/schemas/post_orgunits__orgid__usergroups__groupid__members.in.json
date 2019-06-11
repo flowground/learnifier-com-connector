@@ -1,0 +1,28 @@
+{
+    "type": "object",
+    "properties": {
+        "orgid": {
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+        },
+        "groupid": {
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+        },
+        "requestBody": {
+            "properties": {
+                "uuid": {
+                    "description": "UUID of user to add to this group.",
+                    "format": "uuid",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "uuid"
+            ],
+            "type": "object"
+        }
+    }
+}

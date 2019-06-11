@@ -1,0 +1,63 @@
+{
+    "type": "object",
+    "properties": {
+        "orgid": {
+            "required": true,
+            "type": "integer"
+        },
+        "requestBody": {
+            "properties": {
+                "country": {
+                    "description": "The country code. Default value will be used if not specified",
+                    "example": "SE",
+                    "format": "countrycode",
+                    "type": "string"
+                },
+                "createdBy": {
+                    "description": "The id of the user that created the project. If the creator is not known this value can be *null* or not specified",
+                    "example": "8c102c8e-fabd-4c8a-b245-4d2d2f77fc4b",
+                    "format": "uuid",
+                    "type": "string"
+                },
+                "designId": {
+                    "description": "The id of the design this project should be based on",
+                    "format": "int64",
+                    "type": "integer"
+                },
+                "locale": {
+                    "description": "The primary locale for this project. Default value will be used if not specified",
+                    "example": "en-US",
+                    "format": "locale",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The internal name of the project",
+                    "type": "string"
+                },
+                "note": {
+                    "description": "The internal note field",
+                    "type": "string"
+                },
+                "timezone": {
+                    "description": "The main timezone for the project. Do not specify for default timezone",
+                    "example": "Europe/Stockholm",
+                    "format": "timezone",
+                    "type": "string"
+                },
+                "userDescription": {
+                    "description": "The description presented to participants. Do not specify for default value from design",
+                    "type": "string"
+                },
+                "userTitle": {
+                    "description": "The title presented to participants. Do not specify for default value from design",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name",
+                "designId"
+            ],
+            "type": "object"
+        }
+    }
+}
